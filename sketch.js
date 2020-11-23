@@ -13,11 +13,13 @@ function preload()
 }
 
 function setup() {
+	engine = Engine.create();
+	world = engine.world;
+	
 	createCanvas(800, 700);
 	rectMode(CENTER);
 	
-	engine = Engine.create();
-	world = engine.world;
+	
 
 	packageSprite=createSprite(width/2, 80, 10,10);
 	packageSprite.addImage(packageIMG)
@@ -51,8 +53,6 @@ function setup() {
 	
 	
 	
-	engine = Engine.create();
-	world = engine.world;
 
 	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.5, isStatic:true});
 	World.add(world, packageBody);
